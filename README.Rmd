@@ -15,7 +15,9 @@ knitr::opts_chunk$set(
 
 # sparseNumericHW6
 
-<!-- badges: start --> <!-- badges: end -->
+<!-- badges: start -->
+[![R-CMD-check.yaml](https://github.com/mdharnish/sparseNumericHW6/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mdharnish/sparseNumericHW6/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 The goal of sparseNumericHW6 is to provide an S4 class implementation for sparse numeric vectors. This allows efficient storage and manipulation of numeric datasets that contain many zeros.
 
