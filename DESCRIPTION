@@ -1,0 +1,23 @@
+Package: sparseNumericHW6
+Title: Sparse Numeric Vector S4 Class Implementation
+Version: 0.0.0.9000
+Authors@R: 
+    person("Dharnish", "Muralidharan", 
+           email = "dharnish.muralidharan@example.com", 
+           role = c("aut", "cre"))
+Description: 
+    Provides an S4 class implementation for sparse numeric vectors to
+    efficiently store and manipulate data with a high frequency of
+    zero values. The package includes methods for standard arithmetic
+    operations, calculating the Euclidean norm, and standardizing
+    vectors while maintaining sparsity to optimize memory usage.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports:
+    methods,
+    graphics
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

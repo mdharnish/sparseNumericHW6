@@ -1,0 +1,80 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# sparseNumericHW6
+
+<!-- badges: start --> <!-- badges: end -->
+
+The goal of sparseNumericHW6 is to provide an S4 class implementation for sparse numeric vectors. This allows efficient storage and manipulation of numeric datasets that contain many zeros.
+
+By storing only the non-zero values and their positions, sparse_numeric reduces memory usage while still supporting:
+
+* Arithmetic (`+`, `-`, `*`)
+
+* Coercion to and from base R numeric vectors
+
+* Statistical summaries (`norm()`, `mean()`)
+
+* Standardization (`standardize()`)
+
+* Plotting of shared non-zero indices (`plot()`)
+
+* Unit tests via **testthat** for all functionality
+
+# Installation
+
+You can install the development version of sparseNumericHW6 from GitHub using:
+
+```{r}
+devtools::install_github("mdharnish/sparseNumericHW6")
+```
+
+# Usage
+
+Here is a basic example of how to create and manipulate sparse vectors:
+
+```{r}
+library(sparseNumericHW6)
+
+# Create sparse vectors from standard numeric vectors
+v1 <- sn_vec(c(1, 0, 2, 0, 0))
+v2 <- sn_vec(c(0, 0, 3, 0, 4))
+
+# Inspect object (prints internal structure)
+v1
+```
+
+# Arithmetic
+
+```{r}
+v_sum  <- v1 + v2
+v_prod <- v1 * v2
+
+as(v_sum, "numeric")
+as(v_prod, "numeric")
+```
+
+# Statistics
+
+```{r}
+v_std <- standardize(v1)
+as(v_std, "numeric")
+```
+
+# Plotting
+
+```{r}
+plot(v1, v2)
+```
